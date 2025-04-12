@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #7f1d1d;
+  --secondary: #b91c1c;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+  --light: #f9fafb;
+  --dark: #1f2937;
+  --gray: #6b7280;
+  --light-gray: #d1d5db;
+  --bg-color: #f3f4f6;
+  --text-color: #111827;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.15);
+  --gradient: linear-gradient(135deg, #7f1d1d, #dc2626);
+}
+
+.dark {
+  --bg-color: #111827;
+  --text-color: #f9fafb;
+  --card-bg: #1f2937;
+  --border-color: #374151;
+  --shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.35);
+  --light-gray: #4b5563;
+}
+
+body {
+  @apply bg-[var(--bg-color)] text-[var(--text-color)] font-sans transition-all duration-300;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-6;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow)] hover:-translate-y-0.5;
+}
+
+.btn-success {
+  @apply bg-gradient-to-r from-[#10b981] to-[#059669] text-white;
+}
+
+.btn-danger {
+  @apply bg-[var(--danger)] text-white;
+}
+
+.btn-info {
+  @apply bg-[var(--info)] text-white;
+}
+
+.btn-secondary {
+  @apply bg-[var(--gray)] text-white;
+}
+
+.input {
+  @apply w-full p-3 border border-[var(--border-color)] rounded-lg bg-[var(--card-bg)] text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent shadow-[var(--shadow-sm)];
+}
+
+.card {
+  @apply bg-[var(--card-bg)] rounded-xl shadow-[var(--shadow)] p-6 transition-all duration-300 hover:shadow-[var(--shadow-lg)] hover:-translate-y-1;
+}
+
+.modal {
+  @apply fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50;
+}
+
+.modal-content {
+  @apply bg-[var(--card-bg)] rounded-2xl shadow-[var(--shadow-lg)] p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto;
+}
